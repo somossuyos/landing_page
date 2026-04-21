@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
+
   <header class="header" id="header">
     <div class="header__inner">
       <a href="#congress" class="logo">SOMOS SUYOS</a>
@@ -15,33 +16,62 @@
   </header>
 
   <main>
+
+    <!-- ═══ HERO ═══ -->
     <section class="hero" id="congress">
-      <div class="hero__glow" aria-hidden="true"></div>
-      <div class="hero__lines" aria-hidden="true"></div>
-      <div class="container hero__grid">
-        <div class="hero__content">
-          <p class="hero__eyebrow">Congreso nacional · Bogotá, Colombia</p>
-          <h1 class="hero__title">
-            <span class="hero__title-line">RENASER</span>
-            <span class="hero__title-line hero__title-line--year">2026</span>
-          </h1>
-          <p class="hero__subtitle">Atrévete a renacer</p>
-          <p class="hero__desc">Descubre la Teología del Cuerpo como camino de renovación: identidad, dignidad, vocación y amor, mientras tu historia se ilumina con el plan de Dios para la persona humana.</p>
-          <div class="hero__actions">
-            <a href="https://www.somossuyos.com/eventos/congreso-renaser-2026" class="btn btn--primary" target="_blank" rel="noopener noreferrer">Inscribirme ahora</a>
-            <a href="#speakers" class="btn btn--secondary">Ver ponentes</a>
-          </div>
+
+      <div class="hero-vlines" aria-hidden="true"></div>
+
+      <!-- Content -->
+      <div class="hero__inner">
+        <p class="hero__badge">
+          <span class="hero__badge-line"></span>
+          Somos Suyos · Congreso Internacional
+          <span class="hero__badge-line"></span>
+        </p>
+
+        <h1 class="hero__title">
+          <span class="hero__title-main">RENASER</span>
+          <span class="hero__title-year">2026</span>
+        </h1>
+
+        <div class="hero__divider" aria-hidden="true"></div>
+
+        <p class="hero__tagline">
+          Tu sexualidad no es lo que haces.<br>
+          <span class="hero__tagline-emphasis">Es quien eres.</span>
+        </p>
+
+        <div class="hero__meta">
+          <span class="hero__meta-item"><strong>18 y 19 de Julio</strong></span>
+          <span class="hero__meta-dot" aria-hidden="true"></span>
+          <span class="hero__meta-item"><strong>7:00 AM - 7:30 PM</strong></span>
+          <span class="hero__meta-dot" aria-hidden="true"></span>
+          <span class="hero__meta-item"><strong>Teatro William Shakespeare · Bogotá</strong></span>
         </div>
-        <figure class="media-frame media-frame--hero" data-placeholder-label="Renaser 2026">
-          <img src="assets/images/hero-main.jpg" alt="Renaser 2026" width="1200" height="1400" loading="eager" decoding="async">
-        </figure>
+
+        <div class="hero__actions">
+          <a href="https://www.somossuyos.com/eventos/congreso-renaser-2026" class="btn btn--primary btn--large" target="_blank" rel="noopener noreferrer">
+            Reservar mi lugar
+            <span class="btn__badge">Fase 1 desde $490k</span>
+          </a>
+          <a href="#sobre-el-congreso" class="btn btn--ghost btn--large">Conocer el congreso</a>
+        </div>
+        <p class="hero__urgency">⚑ Cupos limitados · precio anticipado válido hasta el 31 de mayo</p>
       </div>
+
+      <!-- Scroll hint -->
+      <div class="hero-scroll" aria-hidden="true">
+        <span class="hero-scroll__bar"></span>
+      </div>
+
     </section>
 
+    <!-- ═══ COUNTDOWN ═══ -->
     <section class="countdown" id="countdown" aria-labelledby="countdown-heading">
       <div class="container">
         <h2 id="countdown-heading" class="visually-hidden">Cuenta regresiva al congreso</h2>
-        <p class="countdown__label">Faltan</p>
+        <p class="countdown__label">Tiempo restante · Renaser 2026</p>
         <div class="countdown__grid" role="timer" aria-live="polite">
           <div class="countdown__unit">
             <span class="countdown__value" data-unit="days">00</span>
@@ -67,220 +97,514 @@
       </div>
     </section>
 
+    <!-- ═══ HISTORY / STATS ═══ -->
     <section class="history section" id="history">
       <div class="container history__inner">
-        <h2 class="history__title">
+        <h2 class="history__title" data-reveal="fade-up">
           <span class="history__title-line">DOS EDICIONES.</span>
           <span class="history__title-line history__title-line--accent">UNA TRANSFORMACIÓN REAL.</span>
         </h2>
-        <p class="history__desc">Renaser no es un evento: es un movimiento. Lo que empezó como un sueño en Colombia se ha convertido en uno de los congresos de Teología del Cuerpo más importantes de América Latina.</p>
-        <div class="history__stats">
-          <div class="stat">
-            <span class="stat__value">800+</span>
+        <p class="history__desc" data-reveal="fade-up" data-reveal-delay="100">Renaser no es un evento: es un movimiento. Lo que empezó como un sueño en Colombia se ha convertido en uno de los congresos de Teología del Cuerpo más importantes de América Latina.</p>
+        <div class="history__stats" data-reveal-stagger>
+          <div class="stat" data-reveal="fade-up">
+            <span class="stat__value" data-count="800" data-count-suffix="+">800+</span>
             <span class="stat__label">Asistentes</span>
           </div>
-          <div class="stat">
-            <span class="stat__value">8</span>
+          <div class="stat" data-reveal="fade-up" data-reveal-delay="100">
+            <span class="stat__value" data-count="8">8</span>
             <span class="stat__label">Países</span>
           </div>
-          <div class="stat">
-            <span class="stat__value">3.ª</span>
+          <div class="stat" data-reveal="fade-up" data-reveal-delay="200">
+            <span class="stat__value" data-count="3" data-count-suffix=".ª">3.ª</span>
             <span class="stat__label">Edición</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="about section section--alt" id="about-congress">
-      <div class="container about__layout">
-        <figure class="media-frame media-frame--portrait" data-placeholder-label="Renaser 2026">
-          <img src="assets/images/about-story.jpg" alt="Renaser 2026" width="900" height="1100" loading="lazy" decoding="async">
-        </figure>
-        <div class="about__copy">
-          <h2 class="about__title">
-            <span class="about__title-line">UN ENCUENTRO</span>
-            <span class="about__title-line">PARA RENACER</span>
-            <span class="about__title-line about__title-line--accent">EN LA VERDAD</span>
-          </h2>
-          <p class="about__text">Renaser 2026 es un espacio para redescubrir la belleza de tu identidad y vocación. A través de la Teología del Cuerpo exploraremos el amor, el don de sí, la dignidad y la sexualidad como camino hacia Dios.</p>
-          <ul class="about__list">
-            <li>Formación profunda</li>
-            <li>Comunidad transformadora</li>
-            <li>Experiencia encarnada</li>
-          </ul>
-          <blockquote class="about__quote">
-            <p>«El cuerpo, y sólo él, es capaz de hacer visible lo invisible: lo espiritual y lo divino.»</p>
-            <footer>San Juan Pablo II · Teología del Cuerpo</footer>
-          </blockquote>
+    <!-- ═══ ABOUT CONGRESS ═══ -->
+    <section class="about-congress section section--alt" id="sobre-el-congreso">
+      <div class="container">
+        <div class="about-congress__layout">
+
+          <div class="about-congress__copy">
+            <p class="section__kicker" data-reveal="fade-up">El congreso</p>
+            <h2 class="section__title" data-reveal="fade-up" data-reveal-delay="60">
+              Un encuentro para<br><span class="section__title-accent">renacer en la verdad</span>
+            </h2>
+            <p class="about-congress__text" data-reveal="fade-up" data-reveal-delay="120">
+              Renaser 2026 es un espacio para redescubrir la belleza de tu identidad y vocación. A través de la Teología del Cuerpo exploraremos el amor, el don de sí, la dignidad y la sexualidad como camino hacia Dios.
+            </p>
+            <ul class="about-congress__list" data-reveal="fade-up" data-reveal-delay="180">
+              <li>
+                <span class="about-congress__list-icon" aria-hidden="true">✦</span>
+                <strong>Ponentes internacionales:</strong> teología, neurociencia y psicología clínica desde la fe
+              </li>
+              <li>
+                <span class="about-congress__list-icon" aria-hidden="true">✦</span>
+                <strong>Adoración y experiencia espiritual:</strong> un encuentro que mueve el alma, no solo la mente
+              </li>
+              <li>
+                <span class="about-congress__list-icon" aria-hidden="true">✦</span>
+                <strong>Comunidad de más de 800 personas,</strong> la tercera edición del congreso más esperado de Colombia
+              </li>
+            </ul>
+            <div data-reveal="fade-up" data-reveal-delay="240">
+              <a href="https://www.somossuyos.com/eventos/congreso-renaser-2026"
+                 class="btn btn--primary btn--large"
+                 target="_blank" rel="noopener noreferrer">
+                Reservar mi lugar
+              </a>
+            </div>
+          </div>
+
+          <div class="about-congress__aside" data-reveal="fade-up" data-reveal-delay="120">
+            <div class="about-congress__card">
+              <p class="about-congress__card-eyebrow">Detalles del evento</p>
+              <dl class="about-congress__details">
+                <div class="about-congress__detail">
+                  <dt>Fecha</dt>
+                  <dd>18 y 19 de julio de 2026</dd>
+                </div>
+                <div class="about-congress__detail">
+                  <dt>Horario</dt>
+                  <dd>7:00 a. m. - 7:30 p. m.</dd>
+                </div>
+                <div class="about-congress__detail">
+                  <dt>Sede</dt>
+                  <dd>Teatro William Shakespeare<br><span>Colegio Anglo Colombiano · Bogotá</span></dd>
+                </div>
+                <div class="about-congress__detail">
+                  <dt>Incluye</dt>
+                  <dd>Conferencias y kit de bienvenida</dd>
+                </div>
+                <div class="about-congress__detail about-congress__detail--price">
+                  <dt>Precio</dt>
+                  <dd>desde <strong>$490.000 COP</strong> <span>Fase 1 Preventa</span></dd>
+                </div>
+              </dl>
+              <a href="#pricing" class="btn btn--ghost about-congress__card-btn">
+                Ver todos los precios →
+              </a>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
+    <!-- ═══ HANDS TRANSITION ═══ -->
+    <div class="hands-break" aria-hidden="true">
+      <div class="hands-break__glow"></div>
+      <div class="hands-break__img-wrap" data-reveal="fade-in">
+        <img
+          src="https://thdmvtpvapfjvglehsys.supabase.co/storage/v1/object/public/Renaser/MANOS%20(1).png"
+          alt=""
+          class="hands-break__img"
+          loading="lazy"
+          decoding="async"
+        >
+      </div>
+      <div class="hands-break__quote" data-reveal="fade-up" data-reveal-delay="150">
+        <p>«El cuerpo, y sólo él, es capaz de hacer visible lo invisible: lo espiritual y lo divino.»</p>
+        <cite>San Juan Pablo II · Teología del Cuerpo</cite>
+      </div>
+    </div>
+
+    <!-- ═══ PROMO VIDEO SECTION ═══ -->
+    <section class="promo-vid" id="about-congress">
+      <div class="promo-vid__video-wrap">
+        <video
+          id="promo-video"
+          class="promo-vid__video"
+          autoplay muted loop playsinline
+          preload="auto">
+          <source src="https://thdmvtpvapfjvglehsys.supabase.co/storage/v1/object/public/video%20renaser/PROX%20RENASER%20(1).mp4" type="video/mp4">
+        </video>
+        <div class="promo-vid__overlay"></div>
+      </div>
+
+      <button class="promo-vid__mute" id="promo-mute" aria-label="Activar sonido" type="button">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+          <line x1="23" y1="9" x2="17" y2="15" class="mute-x1"/>
+          <line x1="17" y1="9" x2="23" y2="15" class="mute-x2"/>
+          <path d="M15.54 8.46a5 5 0 0 1 0 7.07" class="unmute-wave" style="display:none"/>
+        </svg>
+        <span id="promo-mute-label">Activar sonido</span>
+      </button>
+    </section>
+
+    <!-- ═══ SPEAKERS ═══ -->
     <section class="speakers section" id="speakers">
       <div class="container">
         <div class="section__head section__head--center">
-          <h2 class="section__title">Ponentes</h2>
+          <p class="section__kicker" data-reveal="fade-up">Voces que transforman</p>
+          <h2 class="section__title" data-reveal="fade-up" data-reveal-delay="80">Ponentes <span class="section__title-accent">Confirmados</span></h2>
+          <p class="section__sub" data-reveal="fade-up" data-reveal-delay="140">Desde la ciencia, la fe y la experiencia vivida.</p>
         </div>
         <div class="speakers__grid">
-          <article class="speaker-card">
-            <figure class="media-frame media-frame--speaker" data-placeholder-label="Ponente">
-              <img src="assets/images/speaker-maria-paula.jpg" alt="María Paula Aldana" width="640" height="800" loading="lazy" decoding="async">
+
+          <article class="speaker-card" data-reveal="fade-up">
+            <figure class="media-frame media-frame--speaker">
+              <img src="https://thdmvtpvapfjvglehsys.supabase.co/storage/v1/object/public/Renaser/Mapi%20fondo%20morado.PNG" alt="María Paula Aldana" width="640" height="800" loading="lazy" decoding="async">
             </figure>
             <div class="speaker-card__body">
+              <div class="speaker-card__flag">🇨🇴</div>
               <h3 class="speaker-card__name">María Paula Aldana</h3>
-              <p class="speaker-card__country">Colombia</p>
+              <p class="speaker-card__role">Conferencista · Escritora · Teología del Cuerpo</p>
+              <p class="speaker-card__bio">Creadora de contenido digital y defensora de la Dignidad Humana (World Youth Alliance). Estudiante de Teología en la Universidad de Navarra. Egresada de programas de Educación Sexual Integral en Argentina y Perú.</p>
             </div>
           </article>
-          <article class="speaker-card">
-            <figure class="media-frame media-frame--speaker" data-placeholder-label="Ponente">
-              <img src="assets/images/speaker-gustavo.jpg" alt="Gustavo Mejía" width="640" height="800" loading="lazy" decoding="async">
+
+          <article class="speaker-card" data-reveal="fade-up" data-reveal-delay="80">
+            <figure class="media-frame media-frame--speaker">
+              <img src="https://thdmvtpvapfjvglehsys.supabase.co/storage/v1/object/public/Renaser/Gustavo%20mejia.jpg" alt="Gustavo Mejía" width="640" height="800" loading="lazy" decoding="async">
             </figure>
             <div class="speaker-card__body">
+              <div class="speaker-card__flag">🇺🇸</div>
               <h3 class="speaker-card__name">Gustavo Mejía</h3>
-              <p class="speaker-card__country">Estados Unidos</p>
+              <p class="speaker-card__role">Terapista Sexual · Trauma IFS · Neurociencia</p>
+              <p class="speaker-card__bio">Fundador de OneBodySpiritMind y CEO de Humano Sanación Integral. Integra clínica psicológica con espiritualidad cristiana y Teología del Cuerpo.</p>
             </div>
           </article>
-          <article class="speaker-card">
-            <figure class="media-frame media-frame--speaker" data-placeholder-label="Ponente">
-              <img src="assets/images/speaker-rafael.jpg" alt="Rafael Lafuente" width="640" height="800" loading="lazy" decoding="async">
+
+          <article class="speaker-card" data-reveal="fade-up" data-reveal-delay="160">
+            <figure class="media-frame media-frame--speaker">
+              <img src="https://thdmvtpvapfjvglehsys.supabase.co/storage/v1/object/public/Renaser/Rafael%20sentado.webp" alt="Rafael Lafuente" width="640" height="800" loading="lazy" decoding="async">
             </figure>
             <div class="speaker-card__body">
+              <div class="speaker-card__flag">🇪🇸</div>
               <h3 class="speaker-card__name">Rafael Lafuente</h3>
-              <p class="speaker-card__country">España</p>
+              <p class="speaker-card__role">Conferencista Internacional</p>
+              <p class="speaker-card__bio">Voz de referencia en el mundo hispanohablante sobre identidad, afectividad y vocación al amor desde la visión cristiana del cuerpo humano.</p>
             </div>
           </article>
-          <article class="speaker-card">
-            <figure class="media-frame media-frame--speaker" data-placeholder-label="Ponente">
-              <img src="assets/images/speaker-david.jpg" alt="Dr. David Ramírez" width="640" height="800" loading="lazy" decoding="async">
+
+          <article class="speaker-card" data-reveal="fade-up" data-reveal-delay="240">
+            <figure class="media-frame media-frame--speaker">
+              <img src="https://thdmvtpvapfjvglehsys.supabase.co/storage/v1/object/public/Renaser/Dr%20David.avif" alt="Dr. David Ramírez" width="640" height="800" loading="lazy" decoding="async">
             </figure>
             <div class="speaker-card__body">
+              <div class="speaker-card__flag">🇪🇸</div>
               <h3 class="speaker-card__name">Dr. David Ramírez</h3>
-              <p class="speaker-card__country">España</p>
+              <p class="speaker-card__role">Doctor en Medicina · Neurociencia · Psicología Sanitaria</p>
+              <p class="speaker-card__bio">Doctor en Neurociencia y Cognición (U. de Navarra). Especialista en terapia de pareja, sexualidad y adicciones. Director del Centro PsicoSalud Pamplona.</p>
             </div>
           </article>
+
+          <article class="speaker-card" data-reveal="fade-up" data-reveal-delay="320">
+            <figure class="media-frame media-frame--speaker">
+              <img src="https://thdmvtpvapfjvglehsys.supabase.co/storage/v1/object/public/Renaser/Padre%20astolfo.jpg" alt="Padre Astolfo Moreno" width="640" height="800" loading="lazy" decoding="async">
+            </figure>
+            <div class="speaker-card__body">
+              <div class="speaker-card__flag">🇨🇴</div>
+              <h3 class="speaker-card__name">P. Astolfo Moreno</h3>
+              <p class="speaker-card__role">Sacerdote · Vicario Episcopal · Bogotá</p>
+              <p class="speaker-card__bio">Sacerdote de la Arquidiócesis de Bogotá y Vicario Episcopal. Acompaña familias y jóvenes en su camino hacia el amor auténtico.</p>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
 
+    <!-- ═══ INCLUDES ═══ -->
     <section class="receive section section--alt" id="receive">
       <div class="container">
         <div class="section__head section__head--center">
-          <h2 class="section__title">Qué incluye</h2>
+          <p class="section__kicker">Todo incluido</p>
+          <h2 class="section__title">Lo que recibes</h2>
         </div>
         <div class="receive__grid">
-          <div class="receive-item">
-            <span class="receive-item__mark" aria-hidden="true"></span>
+          <div class="receive-item" data-reveal="fade-up">
+            <span class="receive-item__mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </span>
             <h3 class="receive-item__title">Conferencias</h3>
+            <p class="receive-item__desc">Ponentes de Colombia, EE. UU. y España. Teología del cuerpo, identidad y misión.</p>
           </div>
-          <div class="receive-item">
-            <span class="receive-item__mark" aria-hidden="true"></span>
-            <h3 class="receive-item__title">Comidas incluidas</h3>
-          </div>
-          <div class="receive-item">
-            <span class="receive-item__mark" aria-hidden="true"></span>
+          <div class="receive-item" data-reveal="fade-up" data-reveal-delay="80">
+            <span class="receive-item__mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 12V22H4V12"/><path d="M22 7H2v5h20V7z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg>
+            </span>
             <h3 class="receive-item__title">Kit de bienvenida</h3>
+            <p class="receive-item__desc">Material exclusivo que acompañará tu experiencia y tu camino posterior.</p>
           </div>
-          <div class="receive-item">
-            <span class="receive-item__mark" aria-hidden="true"></span>
-            <h3 class="receive-item__title">Parqueadero disponible</h3>
+          <div class="receive-item" data-reveal="fade-up" data-reveal-delay="160">
+            <span class="receive-item__mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h5l2 5v4h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            </span>
+            <h3 class="receive-item__title">Parqueadero</h3>
+            <p class="receive-item__desc">Disponible en el lugar. Tarifa día completo: <strong>$5.000 COP</strong>.</p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ═══ AUDIENCE ═══ -->
     <section class="audience section" id="who-its-for">
       <div class="container">
         <div class="section__head section__head--center">
-          <h2 class="section__title">Para quién es</h2>
+          <p class="section__kicker">Para ti</p>
+          <h2 class="section__title">¿Para quién es<br><span class="section__title-accent">Renaser?</span></h2>
+          <p class="section__sub">Si quieres ordenar tu corazón, sanar tu historia y vivir tu identidad con verdad, este espacio es para ti.</p>
         </div>
         <div class="audience__grid">
-          <div class="audience-card">
-            <span class="audience-card__num">1</span>
-            <h3 class="audience-card__title">Jóvenes en búsqueda</h3>
+          <div class="audience-card" data-reveal="fade-up">
+            <span class="audience-card__num">01</span>
+            <div class="audience-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                <!-- Llama / renacer (no set genérico) -->
+                <path d="M12 2c1.3 2 0.2 3.6-0.9 4.8C9.9 8.2 9.2 9.3 9.2 11c0 2 1.4 3.2 2.8 4.5 1.5-1.1 3-2.7 3-4.8 0-1.8-.9-2.8-2-4.1-.8-1-.9-2.6-1-4.6z"/>
+                <path d="M7.1 13.2c-1 1.1-1.6 2.4-1.6 4 0 2.8 2.6 4.8 6.5 4.8s6.5-2 6.5-4.8c0-1.6-.6-2.9-1.6-4"/>
+                <path d="M9.2 17.2c0 1.6 1.2 2.8 2.8 2.8s2.8-1.2 2.8-2.8"/>
+              </svg>
+            </div>
+            <h3 class="audience-card__title">Jóvenes (18-35)</h3>
+            <p class="audience-card__desc">Si estás construyendo tu vida afectiva y buscas respuestas sin ruido ni culpa, aquí encontrarás formación, comunidad y dirección con ciencia y fe.</p>
           </div>
-          <div class="audience-card">
-            <span class="audience-card__num">2</span>
+          <div class="audience-card" data-reveal="fade-up" data-reveal-delay="100">
+            <span class="audience-card__num">02</span>
+            <div class="audience-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                <!-- Alianza / hogar (no corazón genérico) -->
+                <path d="M3.5 11.2 12 4.5l8.5 6.7"/>
+                <path d="M6.2 10.8V20h11.6v-9.2"/>
+                <path d="M9.2 20v-5.2c0-1.4 1.1-2.5 2.5-2.5s2.5 1.1 2.5 2.5V20"/>
+                <path d="M7.1 14.2c1.4-1 3.1-1.6 4.9-1.6s3.5.6 4.9 1.6"/>
+              </svg>
+            </div>
             <h3 class="audience-card__title">Parejas y familias</h3>
+            <p class="audience-card__desc">Para fortalecer el vínculo, mejorar la comunicación y redescubrir el sentido del amor total. Ideas profundas y herramientas prácticas para el día a día.</p>
           </div>
-          <div class="audience-card">
-            <span class="audience-card__num">3</span>
-            <h3 class="audience-card__title">Hombres y mujeres heridos</h3>
+          <div class="audience-card" data-reveal="fade-up" data-reveal-delay="200">
+            <span class="audience-card__num">03</span>
+            <div class="audience-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                <!-- Sanación / reparación (no escudo genérico) -->
+                <path d="M7.2 7.3c1.6-1.6 4.2-1.6 5.8 0l1 1 1-1c1.6-1.6 4.2-1.6 5.8 0s1.6 4.2 0 5.8L12 22l-8.8-8.9c-1.6-1.6-1.6-4.2 0-5.8"/>
+                <path d="M9 12h2l1-2 1.2 4 1.1-2H16"/>
+              </svg>
+            </div>
+            <h3 class="audience-card__title">Personas con heridas</h3>
+            <p class="audience-card__desc">Si tu historia dejó marcas, no estás solo. Un camino de verdad, acompañamiento y esperanza para sanar la afectividad y la identidad.</p>
           </div>
-          <div class="audience-card">
-            <span class="audience-card__num">4</span>
-            <h3 class="audience-card__title">Líderes y mentores</h3>
+          <div class="audience-card" data-reveal="fade-up" data-reveal-delay="300">
+            <span class="audience-card__num">04</span>
+            <div class="audience-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                <!-- Guía / liderazgo (no “info” genérico) -->
+                <path d="M12 2c2.2 2.2 3.3 4.4 3.3 6.6 0 2.2-1.1 4.2-3.3 6-2.2-1.8-3.3-3.8-3.3-6C8.7 6.4 9.8 4.2 12 2z"/>
+                <path d="M10.2 14.9 9.1 22l2.9-1.6L14.9 22l-1.1-7.1"/>
+                <path d="M7 9.5c-1 .2-2 .7-2.9 1.5"/>
+                <path d="M17 9.5c1 .2 2 .7 2.9 1.5"/>
+              </svg>
+            </div>
+            <h3 class="audience-card__title">Líderes y formadores</h3>
+            <p class="audience-card__desc">Para quienes acompañan a otros: formación sólida, lenguaje claro y criterios prácticos para orientar procesos con misericordia y verdad.</p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ═══ VENUE ═══ -->
     <section class="venue section section--alt" id="venue">
       <div class="container venue__layout">
         <div class="venue__copy">
-          <h2 class="venue__title">Sede</h2>
+          <p class="about__kicker">El lugar</p>
+          <h2 class="venue__title">Teatro<br><span class="venue__title-accent">William Shakespeare</span></h2>
           <ul class="venue__facts">
-            <li><span class="venue__fact-label">Teatro</span> Teatro William Shakespeare</li>
-            <li><span class="venue__fact-label">Colegio</span> Anglo Colombiano</li>
+            <li><span class="venue__fact-label">Sede</span> Colegio Anglo Colombiano</li>
             <li><span class="venue__fact-label">Dirección</span> Av. 19 #152A-48, Bogotá</li>
             <li><span class="venue__fact-label">Fechas</span> Sábado 18 y domingo 19 de julio de 2026</li>
-            <li><span class="venue__fact-label">Horario</span> 7:00 a. m. — 7:30 p. m.</li>
+            <li><span class="venue__fact-label">Horario</span> 7:00 a. m. - 7:30 p. m.</li>
             <li><span class="venue__fact-label">Parqueadero</span> Disponible · $5.000 COP el día completo</li>
           </ul>
         </div>
-        <figure class="media-frame media-frame--venue" data-placeholder-label="Sede">
-          <img src="assets/images/venue-theater.jpg" alt="Teatro William Shakespeare" width="1400" height="900" loading="lazy" decoding="async">
-        </figure>
+        <div class="venue-map-wrap" data-reveal="fade-up">
+          <iframe
+            src="https://maps.google.com/maps?q=Colegio+Anglo+Colombiano,+Av+19+%23152A-48,+Bogota,+Colombia&output=embed&z=17"
+            width="100%" height="380"
+            style="border:0;filter:invert(90%) hue-rotate(175deg) saturate(0.5) brightness(0.75) contrast(1.1)"
+            allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Teatro William Shakespeare - Colegio Anglo Colombiano, Bogotá">
+          </iframe>
+        </div>
       </div>
     </section>
 
+    <!-- ═══ PRICING ═══ -->
     <section class="pricing section" id="pricing">
       <div class="container">
         <div class="section__head section__head--center">
-          <h2 class="section__title">Precios</h2>
+          <p class="section__kicker">Inversión</p>
+          <h2 class="section__title">Una inversión en tu<br><span class="section__title-accent">transformación</span></h2>
         </div>
+        <!-- Phase timeline bar -->
+        <div class="pricing__phase-bar" data-reveal="fade-up">
+          <div class="pricing__pi pricing__pi--1">
+            <span class="pricing__pi-dot pricing__pi-dot--active"></span>
+            <div class="pricing__pi-body">
+              <strong class="pricing__pi-name">Fase 1 · Preventa</strong>
+              <span class="pricing__pi-date">Hasta el <strong>31 de mayo de 2026</strong></span>
+            </div>
+            <span class="pricing__pi-status" id="pi-status-1">● Activa ahora</span>
+          </div>
+          <div class="pricing__pi-connector" aria-hidden="true">
+            <span class="pricing__pi-line"></span>
+            <span class="pricing__pi-arrow">→</span>
+            <span class="pricing__pi-line pricing__pi-line--right"></span>
+          </div>
+          <div class="pricing__pi pricing__pi--2">
+            <span class="pricing__pi-dot" id="pi-dot-2"></span>
+            <div class="pricing__pi-body">
+              <strong class="pricing__pi-name">Fase 2 · Precio regular</strong>
+              <span class="pricing__pi-date">Desde el <strong>1 de junio de 2026</strong></span>
+            </div>
+            <span class="pricing__pi-status pricing__pi-status--soon" id="pi-status-2">Próximamente</span>
+          </div>
+        </div>
+
+        <div class="pricing__scroll-wrap">
         <div class="pricing__grid">
-          <article class="price-card price-card--featured">
-            <p class="price-card__tier">Preventa</p>
-            <p class="price-card__amount"><span class="price-card__figure">$420.000</span> <span class="price-card__currency">COP</span></p>
+
+          <!-- F1 · Individual -->
+          <article class="price-card price-card--featured" data-phase="1" data-reveal="fade-up">
+            <div class="price-card__badge">Mejor precio</div>
+            <p class="price-card__phase-tag">Fase 1 · Preventa</p>
+            <p class="price-card__tier">Individual</p>
+            <p class="price-card__amount">
+              <span class="price-card__figure">$490.000</span>
+              <span class="price-card__currency">COP</span>
+            </p>
+            <div class="price-card__savings">Ahorras $30.000 vs Fase 2</div>
             <ul class="price-card__list">
               <li>Dos días completos de congreso</li>
-              <li>Comidas incluidas</li>
               <li>Kit de bienvenida</li>
               <li>Todas las conferencias</li>
               <li>Cupos limitados</li>
             </ul>
-            <a href="https://www.somossuyos.com/eventos/congreso-renaser-2026" class="btn btn--primary price-card__btn" target="_blank" rel="noopener noreferrer">Inscribirse</a>
+            <a href="https://www.somossuyos.com/eventos/congreso-renaser-2026"
+               class="btn btn--primary price-card__btn"
+               target="_blank" rel="noopener noreferrer">
+              Inscribirme ahora
+            </a>
           </article>
-          <article class="price-card">
-            <p class="price-card__tier">Precio general</p>
-            <p class="price-card__amount"><span class="price-card__figure">$450.000</span> <span class="price-card__currency">COP</span></p>
+
+          <!-- F1 · Grupos -->
+          <article class="price-card" data-phase="1" data-reveal="fade-up" data-reveal-delay="80">
+            <div class="price-card__group-tag">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+              Desde 3 personas
+            </div>
+            <p class="price-card__phase-tag">Fase 1 · Preventa</p>
+            <p class="price-card__tier">Grupos</p>
+            <p class="price-card__amount">
+              <span class="price-card__figure">$470.000</span>
+              <span class="price-card__currency">COP / persona</span>
+            </p>
+            <div class="price-card__savings">Ahorras $20.000 por persona vs Fase 2</div>
             <ul class="price-card__list">
               <li>Dos días completos de congreso</li>
-              <li>Comidas incluidas</li>
               <li>Kit de bienvenida</li>
               <li>Todas las conferencias</li>
             </ul>
-            <a href="https://www.somossuyos.com/eventos/congreso-renaser-2026" class="btn btn--secondary price-card__btn" target="_blank" rel="noopener noreferrer">Inscribirse</a>
+            <p class="price-card__group-note">Cuéntanos cuántas personas son y te enviamos el link de pago en minutos.</p>
+            <a href="https://api.whatsapp.com/send/?phone=573223885754&text=Hola%2C+quiero+inscribir+un+grupo+al+Congreso+Renaser+2026+(Fase+1+Preventa).+Gracias&type=phone_number&app_absent=0"
+               class="btn btn--wa price-card__btn"
+               target="_blank" rel="noopener noreferrer">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Solicitar link grupal
+            </a>
           </article>
+
+          <!-- F2 · Individual (locked) -->
+          <article class="price-card price-card--locked" data-phase="2" data-reveal="fade-up" data-reveal-delay="160">
+            <p class="price-card__phase-tag price-card__phase-tag--2">Fase 2 · desde 1 Jun</p>
+            <p class="price-card__tier">Individual</p>
+            <p class="price-card__amount">
+              <span class="price-card__figure">$520.000</span>
+              <span class="price-card__currency">COP</span>
+            </p>
+            <ul class="price-card__list">
+              <li>Dos días completos de congreso</li>
+              <li>Kit de bienvenida</li>
+              <li>Todas las conferencias</li>
+            </ul>
+            <span class="price-card__locked-cta price-card__btn" aria-hidden="true">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              Disponible el 1 de junio
+            </span>
+          </article>
+
+          <!-- F2 · Grupos (locked) -->
+          <article class="price-card price-card--locked" data-phase="2" data-reveal="fade-up" data-reveal-delay="240">
+            <div class="price-card__group-tag">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+              Desde 3 personas
+            </div>
+            <p class="price-card__phase-tag price-card__phase-tag--2">Fase 2 · desde 1 Jun</p>
+            <p class="price-card__tier">Grupos</p>
+            <p class="price-card__amount">
+              <span class="price-card__figure">$490.000</span>
+              <span class="price-card__currency">COP / persona</span>
+            </p>
+            <ul class="price-card__list">
+              <li>Dos días completos de congreso</li>
+              <li>Kit de bienvenida</li>
+              <li>Todas las conferencias</li>
+            </ul>
+            <span class="price-card__locked-cta price-card__btn" aria-hidden="true">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              Disponible el 1 de junio
+            </span>
+          </article>
+
         </div>
+        <p class="pricing__note">Compra en Fase 1 y ahorras hasta $30.000 · El precio sube automáticamente el 1 de junio</p>
       </div>
     </section>
 
+    <!-- ═══ FINAL CTA ═══ -->
     <section class="final-cta section" id="register">
       <div class="container final-cta__inner">
-        <p class="final-cta__eyebrow">18–19 de julio · Bogotá, Colombia</p>
-        <h2 class="final-cta__title">TU SEXUALIDAD ES TU LLAMADO</h2>
-        <p class="final-cta__text">Atrévete a renacer</p>
+        <p class="final-cta__eyebrow">Julio 18 y 19 · Bogotá, Colombia</p>
+        <h2 class="final-cta__title">TU SEXUALIDAD<br>ES TU <span class="section__title-accent">LLAMADO</span></h2>
+        <p class="final-cta__text">Atrévete a nacer de nuevo.</p>
+        <div class="final-cta__details">
+          <div class="final-cta__detail">
+            <span class="final-cta__detail-label">Fecha</span>
+            <span class="final-cta__detail-val">18 - 19 JUL 2026</span>
+          </div>
+          <div class="final-cta__divider" aria-hidden="true"></div>
+          <div class="final-cta__detail">
+            <span class="final-cta__detail-label">Horario</span>
+            <span class="final-cta__detail-val">7:00 AM - 7:30 PM</span>
+          </div>
+          <div class="final-cta__divider" aria-hidden="true"></div>
+          <div class="final-cta__detail">
+            <span class="final-cta__detail-label">Fase 1 Preventa</span>
+            <span class="final-cta__detail-val">desde $490.000</span>
+          </div>
+        </div>
         <a href="https://www.somossuyos.com/eventos/congreso-renaser-2026" class="btn btn--primary btn--large final-cta__btn" target="_blank" rel="noopener noreferrer">Inscribirme al congreso</a>
+        <p class="final-cta__note">Organizado por <a href="https://www.somossuyos.com" target="_blank" rel="noopener noreferrer">Somos Suyos</a> · Cupos limitados</p>
       </div>
     </section>
+
   </main>
 
   <footer class="footer">
     <div class="container footer__inner">
       <p class="footer__brand">SOMOS SUYOS</p>
       <p class="footer__meta">Congreso Renaser 2026 · Teatro William Shakespeare · Bogotá, Colombia</p>
-      <a href="https://somossuyos.com" class="footer__link" target="_blank" rel="noopener noreferrer">somossuyos.com</a>
+      <div class="footer__links">
+        <a href="https://somossuyos.com" class="footer__link" target="_blank" rel="noopener noreferrer">somossuyos.com</a>
+        <a href="https://www.instagram.com/somos.sos/" class="footer__link" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.youtube.com/@SomosSuyos" class="footer__link" target="_blank" rel="noopener noreferrer">YouTube</a>
+      </div>
     </div>
   </footer>
 
