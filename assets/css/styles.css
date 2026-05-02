@@ -7,7 +7,7 @@
 }
 
 :root {
-  --ember:       #d4520a;
+  --ember:       #A70014;
   --ember2:      #fd7d80;
   --gold:        #e8a818;
   --gold2:       #f5c840;
@@ -20,7 +20,7 @@
   --pearl2:      #cec5b8;
   --accent:      #fd7d80;
   --accent-soft: #f5c840;
-  --line:        rgba(212, 82, 10, 0.18);
+  --line:        rgba(167, 0, 20, 0.18);
   --font-body:   ui-sans-serif, system-ui, -apple-system, "Segoe UI", "Inter", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-display:ui-sans-serif, system-ui, -apple-system, "Segoe UI", "Inter", Roboto, Arial, sans-serif;
   --font-script: "Segoe Script", "Snell Roundhand", "Brush Script MT", "Apple Chancery", cursive;
@@ -182,6 +182,13 @@ body::after {
   transition: color 0.25s;
 }
 .logo:hover { color: var(--gold2); }
+.logo__img {
+  display: block;
+  height: 26px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 22px rgba(0,0,0,0.5));
+}
 
 /* ── BUTTONS ── */
 .btn {
@@ -1217,6 +1224,132 @@ body::after {
   text-align: center; margin-top: 1.5rem;
   font-size: 0.82rem; font-style: italic; color: var(--muted);
 }
+.pricing__note strong { color: var(--pearl2); font-weight: 800; }
+.pricing__tc-link {
+  color: var(--ember2);
+  text-decoration: none;
+  font-style: normal;
+}
+.pricing__tc-link:hover { color: var(--gold2); }
+
+.pricing__installments {
+  margin-top: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--line);
+  background: linear-gradient(145deg, rgba(167,0,20,0.08) 0%, rgba(8,5,2,0.92) 100%);
+}
+.pricing__installments-title {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: 0.35rem;
+}
+.pricing__installments-sub { font-size: 0.88rem; color: var(--muted); line-height: 1.55; margin-bottom: 0.75rem; }
+.pricing__installments-list { list-style: none; }
+.pricing__installments-list li { font-size: 0.85rem; color: var(--pearl2); padding: 0.25rem 0; }
+.pricing__installments-list strong { color: var(--text); }
+
+@media (max-width: 640px) {
+  .pricing__installments { flex-direction: column; align-items: stretch; }
+  .pricing__installments .btn { width: 100%; }
+}
+
+/* ── MODAL ── */
+.is-modal-open { overflow: hidden; }
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: none;
+}
+.modal.is-open { display: block; }
+.modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.72);
+  backdrop-filter: blur(6px);
+}
+.modal__panel {
+  position: relative;
+  width: min(920px, 92vw);
+  max-height: min(82vh, 740px);
+  margin: 6vh auto;
+  background: linear-gradient(180deg, rgba(13,7,4,0.98) 0%, rgba(2,2,1,0.98) 100%);
+  border: 1px solid rgba(167,0,20,0.35);
+  box-shadow: 0 40px 120px rgba(0,0,0,0.8);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+.modal__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem 1.25rem;
+  border-bottom: 1px solid var(--line);
+}
+.modal__title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+.modal__close {
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: transparent;
+  color: rgba(250,247,242,0.85);
+  cursor: pointer;
+  font-size: 1.3rem;
+  line-height: 1;
+}
+.modal__close:hover { border-color: rgba(255,255,255,0.28); color: var(--text); }
+.modal__body {
+  padding: 1.25rem 1.25rem 0.75rem;
+  overflow: auto;
+  color: var(--pearl2);
+  line-height: 1.7;
+}
+.modal__body h3 {
+  margin-top: 1.15rem;
+  margin-bottom: 0.45rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ember2);
+}
+.modal__body p { margin-top: 0.55rem; }
+.modal__body ul { margin: 0.5rem 0 0.75rem 1.1rem; }
+.modal__body a { color: var(--gold2); text-decoration: none; }
+.modal__body a:hover { color: var(--ember2); }
+.modal__footer {
+  padding: 1rem 1.25rem;
+  border-top: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: rgba(2,2,1,0.75);
+}
+.modal__check {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  color: rgba(206,197,184,0.85);
+}
+.modal__check input { width: 18px; height: 18px; accent-color: var(--ember); }
+.modal__continue[disabled] { opacity: 0.5; pointer-events: none; }
 
 /* ── FINAL CTA ── */
 .final-cta {

@@ -204,4 +204,105 @@
     }
   })();
 
+  /* ══════════════════════════════════════════
+     TERMS & CONDITIONS MODAL + PAYMENT GATE
+     - All payment CTAs must require acceptance before redirect
+     - Redirect target is the CTA's href (CodePay)
+  ══════════════════════════════════════════ */
+  (function () {
+    var STORAGE_KEY = 'renaser_terms_accepted_v1';
+
+    function isAccepted() {
+      try { return localStorage.getItem(STORAGE_KEY) === '1'; }
+      catch (e) { return false; }
+    }
+    function setAccepted(val) {
+      try { localStorage.setItem(STORAGE_KEY, val ? '1' : '0'); }
+      catch (e) {}
+    }
+
+    var modal     = document.getElementById('terms-modal');
+    var acceptEl  = document.getElementById('terms-accept');
+    var contBtn   = document.getElementById('terms-continue');
+    var openLinks = document.querySelectorAll('.js-open-terms');
+    var payCtas   = document.querySelectorAll('.js-pay-cta');
+
+    var pendingHref = null;
+    var lastFocusEl = null;
+
+    function setModalOpen(open) {
+      if (!modal) return;
+      modal.classList.toggle('is-open', open);
+      modal.setAttribute('aria-hidden', open ? 'false' : 'true');
+      document.documentElement.classList.toggle('is-modal-open', open);
+      document.body.classList.toggle('is-modal-open', open);
+
+      if (open) {
+        lastFocusEl = document.activeElement;
+        // Sync checkbox state from storage
+        if (acceptEl) acceptEl.checked = isAccepted();
+        if (contBtn) contBtn.disabled = !(acceptEl && acceptEl.checked);
+        // Focus close button for accessibility
+        var closeBtn = modal.querySelector('[data-modal-close]');
+        if (closeBtn) closeBtn.focus();
+      } else {
+        if (lastFocusEl && typeof lastFocusEl.focus === 'function') lastFocusEl.focus();
+      }
+    }
+
+    function openModal() { setModalOpen(true); }
+    function closeModal() { setModalOpen(false); pendingHref = null; }
+
+    // Open terms from explicit link
+    openLinks.forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        openModal();
+      });
+    });
+
+    // Close handlers
+    if (modal) {
+      modal.querySelectorAll('[data-modal-close]').forEach(function (el) {
+        el.addEventListener('click', function () { closeModal(); });
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+      });
+    }
+
+    // Accept checkbox
+    if (acceptEl) {
+      acceptEl.addEventListener('change', function () {
+        setAccepted(acceptEl.checked);
+        if (contBtn) contBtn.disabled = !acceptEl.checked;
+      });
+    }
+
+    // Continue to payment
+    if (contBtn) {
+      contBtn.addEventListener('click', function () {
+        if (!acceptEl || !acceptEl.checked) return;
+        setAccepted(true);
+        var href = pendingHref;
+        closeModal();
+        if (href) window.open(href, '_blank', 'noopener');
+      });
+    }
+
+    // Gate payment CTAs
+    payCtas.forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        var href = a.getAttribute('href') || '';
+        if (!href) return;
+        if (isAccepted()) return; // allow default behavior
+
+        // Block and force acceptance first
+        e.preventDefault();
+        pendingHref = href;
+        openModal();
+      });
+    });
+  })();
+
 })();
