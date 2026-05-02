@@ -225,7 +225,11 @@
     var acceptEl  = document.getElementById('terms-accept');
     var contBtn   = document.getElementById('terms-continue');
     var openLinks = document.querySelectorAll('.js-open-terms');
-    var payCtas   = document.querySelectorAll('.js-pay-cta');
+
+    // Any CTA pointing to CodePay (or marked with pay context) must be gated.
+    var payCtas = document.querySelectorAll(
+      'a.js-pay-cta, a[data-pay-context], a[href^="https://renaser.codepay.co/"], a[href^="http://renaser.codepay.co/"]'
+    );
 
     var pendingHref = null;
     var lastFocusEl = null;
@@ -293,6 +297,11 @@
     // Gate payment CTAs
     payCtas.forEach(function (a) {
       a.addEventListener('click', function (e) {
+        // Let non-primary clicks behave normally (new tab, etc.)
+        if (e.defaultPrevented) return;
+        if (e.button !== 0) return;
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+
         var href = a.getAttribute('href') || '';
         if (!href) return;
         if (isAccepted()) return; // allow default behavior
