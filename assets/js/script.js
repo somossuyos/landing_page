@@ -210,28 +210,34 @@
      - Redirect target is the CTA's href (CodePay)
   ══════════════════════════════════════════ */
   (function () {
-    var STORAGE_KEY = 'renaser_terms_accepted_v1';
+    // NOTE: Acceptance must be conditional to proceed.
+    // We store it per-session (sessionStorage) so it doesn't get "stuck" forever.
+    var SESSION_KEY = 'renaser_terms_accepted_session_v1';
+    var LEGACY_LOCAL_KEY = 'renaser_terms_accepted_v1';
 
     function isAccepted() {
-      try { return localStorage.getItem(STORAGE_KEY) === '1'; }
+      try { return sessionStorage.getItem(SESSION_KEY) === '1'; }
       catch (e) { return false; }
     }
     function setAccepted(val) {
-      try { localStorage.setItem(STORAGE_KEY, val ? '1' : '0'); }
+      try { sessionStorage.setItem(SESSION_KEY, val ? '1' : '0'); }
       catch (e) {}
     }
+
+    // Clear legacy persistent flag if it exists (prevents "never opens" behavior).
+    try {
+      if (localStorage.getItem(LEGACY_LOCAL_KEY) != null) localStorage.removeItem(LEGACY_LOCAL_KEY);
+    } catch (e) {}
 
     var modal     = document.getElementById('terms-modal');
     var acceptEl  = document.getElementById('terms-accept');
     var contBtn   = document.getElementById('terms-continue');
     var openLinks = document.querySelectorAll('.js-open-terms');
 
-    // Any CTA pointing to CodePay (or marked with pay context) must be gated.
-    var payCtas = document.querySelectorAll(
-      'a.js-pay-cta, a[data-pay-context], a[href^="https://renaser.codepay.co/"], a[href^="http://renaser.codepay.co/"]'
-    );
+    var PAY_SELECTOR = 'a.js-pay-cta, a[data-pay-context], a[href^="https://renaser.codepay.co/"], a[href^="http://renaser.codepay.co/"]';
 
     var pendingHref = null;
+    var pendingTarget = null;
     var lastFocusEl = null;
 
     function setModalOpen(open) {
@@ -289,29 +295,40 @@
         if (!acceptEl || !acceptEl.checked) return;
         setAccepted(true);
         var href = pendingHref;
+        var target = pendingTarget;
         closeModal();
-        if (href) window.open(href, '_blank', 'noopener');
+        if (!href) return;
+        if (target === '_blank') window.open(href, '_blank', 'noopener');
+        else window.location.href = href;
       });
     }
 
-    // Gate payment CTAs
-    payCtas.forEach(function (a) {
-      a.addEventListener('click', function (e) {
-        // Let non-primary clicks behave normally (new tab, etc.)
-        if (e.defaultPrevented) return;
-        if (e.button !== 0) return;
-        if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    function gateToModal(anchor, event) {
+      var href = (anchor && anchor.getAttribute) ? (anchor.getAttribute('href') || '') : '';
+      if (!href) return;
+      if (isAccepted()) return; // allow default behavior
 
-        var href = a.getAttribute('href') || '';
-        if (!href) return;
-        if (isAccepted()) return; // allow default behavior
+      if (event) {
+        event.preventDefault();
+        // Stop any other handlers from navigating
+        event.stopPropagation();
+        if (typeof event.stopImmediatePropagation === 'function') event.stopImmediatePropagation();
+      }
 
-        // Block and force acceptance first
-        e.preventDefault();
-        pendingHref = href;
-        openModal();
-      });
-    });
+      pendingHref = href;
+      pendingTarget = anchor.getAttribute('target') || null;
+      openModal();
+    }
+
+    // Gate payment CTAs (robust: delegated handler in capture phase)
+    document.addEventListener('click', function (e) {
+      if (!e || e.defaultPrevented) return;
+      var t = e.target;
+      if (!t || !t.closest) return;
+      var a = t.closest(PAY_SELECTOR);
+      if (!a) return;
+      gateToModal(a, e);
+    }, true);
   })();
 
 })();
