@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Renaser · Administración</title>
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body>
+    <div class="app" id="app">
+      <section class="panel panel--login" id="loginPanel" aria-labelledby="loginTitle">
+        <div class="panel__card">
+          <p class="panel__eyebrow">Renaser</p>
+          <h1 class="panel__title" id="loginTitle">
+            Panel <span class="panel__title-accent">administrativo</span>
+          </h1>
+          <p class="panel__subtitle">Ingresá la clave de acceso para ver los inscritos.</p>
+          <form class="login-form" id="loginForm" novalidate>
+            <label class="field">
+              <span class="field__label">Clave</span>
+              <input
+                class="field__input"
+                type="password"
+                name="passkey"
+                id="passkeyInput"
+                autocomplete="current-password"
+                required
+                placeholder="••••••••"
+              />
+            </label>
+            <p class="login-form__error" id="loginError" role="alert" hidden>Clave incorrecta</p>
+            <button type="submit" class="btn btn--primary btn--block" id="loginSubmit">
+              Mostrar datos
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <section
+        class="panel panel--dashboard"
+        id="dashboardPanel"
+        hidden
+        aria-labelledby="dashTitle"
+        tabindex="-1"
+      >
+        <header class="dash-header">
+          <div>
+            <p class="panel__eyebrow">Renaser</p>
+            <h1 class="panel__title panel__title--sm" id="dashTitle">
+              <span class="panel__title-accent">Inscripciones</span>
+            </h1>
+          </div>
+          <div class="dash-header__actions">
+            <button type="button" class="btn btn--ghost" id="logoutBtn">Salir</button>
+          </div>
+        </header>
+
+        <div class="stats">
+          <div class="stat-card">
+            <p class="stat-card__label">Total registros</p>
+            <p class="stat-card__value" id="totalCount">0</p>
+          </div>
+        </div>
+
+        <div class="toolbar">
+          <button type="button" class="btn btn--secondary" id="refreshBtn">Refrescar</button>
+          <button type="button" class="btn btn--primary" id="csvBtn">Descargar Excel</button>
+        </div>
+
+        <div class="table-wrap" role="region" aria-label="Tabla de inscritos" tabindex="0">
+          <table class="data-table" id="dataTable">
+            <thead>
+              <tr>
+                <th>Fecha</th>
+                <th>Nombre</th>
+                <th>Teléfono</th>
+                <th>Email</th>
+                <th>Menú</th>
+                <th>Menu Sabado</th>
+                <th>Menu Domingo</th>
+                <th>Vehículo y observaciones</th>
+              </tr>
+            </thead>
+            <tbody id="dataTableBody"></tbody>
+          </table>
+        </div>
+
+        <p class="empty-hint" id="emptyHint" hidden>No hay registros para mostrar.</p>
+        <p class="status-line" id="statusLine" role="status" aria-live="polite"></p>
+      </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <script src="admin.js"></script>
+  </body>
+</html>
