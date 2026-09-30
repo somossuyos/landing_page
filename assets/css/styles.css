@@ -805,6 +805,14 @@ body::after {
   padding: 0.7rem 1.2rem;
   white-space: nowrap;
 }
+.sticky-cta__inner:has(.sticky-cta__btn--solo) {
+  justify-content: center;
+}
+.sticky-cta__btn--solo {
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+}
 @media (max-width: 640px) {
   .sticky-cta {
     padding-left: max(0.65rem, env(safe-area-inset-left));
