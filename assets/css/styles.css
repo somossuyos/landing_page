@@ -449,7 +449,7 @@ body::after {
   margin-bottom: 0;
   line-height: 0.88;
 }
-/* Logo gráfico en hero — solo visible en móvil (el título RENASER se oculta allí) */
+/* Logo gráfico en hero — solo visible en móvil (el titular tipográfico se oculta allí) */
 .hero__logo-link {
   display: none;
   text-decoration: none;
@@ -466,8 +466,8 @@ body::after {
   font-family: var(--font-display);
   font-weight: 800; font-stretch: expanded;
   /* Low min so narrow viewports shrink with vw (old min 5.5rem forced huge type on phones) */
-  font-size: clamp(2.5rem, 18vw, 14rem);
-  letter-spacing: 0.04em;
+  font-size: clamp(2rem, 11vw, 9.5rem);
+  letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--text);
   opacity: 0;
@@ -2572,7 +2572,7 @@ body.has-sticky-cta .support-wa {
       drop-shadow(0 8px 20px rgba(0, 0, 0, 0.35));
   }
 
-  /* Quita el titular tipográfico RENASER en móvil; el logo lo reemplaza */
+  /* Quita el titular tipográfico en móvil; el logo lo reemplaza */
   .hero__title-main {
     position: absolute;
     width: 1px;

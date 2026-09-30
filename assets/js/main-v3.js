@@ -174,23 +174,18 @@
 
     function updateSticky() {
       var pastHero = window.scrollY > hero.offsetHeight * 0.55;
-      var modalOpen = !!document.querySelector('.modal.is-open');
       var pricing = document.getElementById('pricing');
       var inPricing = false;
       if (pricing) {
         var rect = pricing.getBoundingClientRect();
         inPricing = rect.top < window.innerHeight * 0.4 && rect.bottom > 120;
       }
-      var show = pastHero && !modalOpen && !inPricing;
+      var show = pastHero && !inPricing;
       bar.classList.toggle('is-visible', show);
       bar.setAttribute('aria-hidden', show ? 'false' : 'true');
       document.body.classList.toggle('has-sticky-cta', show);
     }
     window.addEventListener('scroll', updateSticky, { passive: true });
-    var obs = new MutationObserver(updateSticky);
-    document.querySelectorAll('.modal').forEach(function (m) {
-      obs.observe(m, { attributes: true, attributeFilter: ['class'] });
-    });
     updateSticky();
   })();
 
